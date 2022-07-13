@@ -1,0 +1,147 @@
+<!-- any tag which have closing tag that is known as container tag -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Content</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <style>
+        .material-icons {
+            color: red;
+            
+        }
+        #website {
+            /* width: 400px;
+            height: 300px; */
+            width: 100%;
+            height: 100vh;
+            display: flex; 
+        }
+        #website iframe{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multimedia Demo </h2>
+    <h1>Audio Tag</h1>
+    <span class="material-icons icon">
+        volume_off
+        </span>
+    <!-- audio m 
+    control  --  page m player aa jata hh , it is a player
+    hidden -- player show na ho
+    autoplay -- apne aap music play ho
+    loop -- restart
+    youtube se download kr skte hh
+    audio ke liye -- youtube ke link m se ...ube.... hta denge uske baad download krlenge
+    vedio ke liye -- link ke aage ss lga dete hh
+    -->
+
+
+
+    <!-- 
+        audio dalna
+        <audio id="audio1" control autoplay loop
+    src="../audio/hawayein-jab-harry-met-sejal-pritam-arijit-singh-anushka-sharma-shah-rukh-khan-4k.mp3"controls autoplay loop>
+    
+    </audio> -->
+
+
+
+
+    <!-- if one source is not working(glt src) then we use the multiple src - audio ke andr source tag ke sath src  -->
+
+    <audio id="audio1" controls loop autoplay >
+        <source src="../audio000000/hawayein-jab-harry-met-sejal-pritam-arijit-singh-anushka-sharma-shah-rukh-khan-4k.mp3" />
+        <source src="../audio000000/dil-galti-kar-baitha-hai-sad-song-meet-bros-ft-jubin-nautiyal-bhushan-k.mp3" />
+        <source src="../audio/jubin-nautiyal-barisho-ka-wo-mahina-ahmed-khan.mp3" />
+    </audio>
+    
+
+
+
+    <h1>Video Tag</h1>
+
+    <video src="../vedio/Sad Boy Shayari Status💔 Sad status _😇sad shayari status _ 🥀broken heart touching status.mp4" controls
+    width="500" height="300" autoplayy loop id="video1"
+    ></video>
+
+
+
+
+    <!-- 
+        iframe create a frame pdf bhi add kr skte hh
+        
+        youtube ka vedio add krne ke liye kissebhi video 
+    pe jaye share wale option m embed se code copy krle -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/IP7EntQ2lSA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    
+
+    <iframe src="https://www.beta-labs.in" frameborder="0"></iframe>
+    website addkrna 
+    iframe is a inline tag jisme kisseka bbhi refrece dal skte hh
+    <div id="website">
+        <iframe src="https://www.beta-labs.in" frameborder="0"></iframe>
+    </div>
+
+
+    <!--
+        icon pr click krke vedio pause krna
+    <script>
+        var x = document.getElementById("audio1");
+        var y = document.getElementsByClassName("icon")[0];
+        console.log(x);
+        console.log(y);
+        y.onclick = function () {
+            console.log("Icon Tapped");
+            y.style.color = "blue";
+
+            x.pause();
+        }
+    </script> -->
+
+    <!-- dynamically src change krna hh icon pr click krke  -->
+    <script>
+        var z = document.getElementById("video1");
+        var y = document.getElementsByClassName("icon")[0];
+        y.onclick = function () {
+            console.log("Icon Tapped");
+            y.style.color = "blue";
+            z.src = "../vedio/Rim Jhim - ❤️Love Song❤️ - Jubin Nautiyal - Ami Mishra - Bhushan, Kumar.mp4"
+            // x.pause();
+        }
+    </script>
+
+
+
+<!-- window scrool hone pr vedio change ho jaye
+    window.onscroll = function(){
+
+    } -->
+
+
+
+
+    <!-- lab switch kree music ruk jaye wapas aaye again play ho jaye -->
+    <script>
+        document.addEventListener("visibilitychange",stopVideo);
+        function stopVideo(){
+            if(document.hidden){
+                document.getElementById("video1").pause();
+            } else {
+                document.getElementById("video1").play();
+            }
+        }
+    </script>
+
+
+</body>
+</html>
